@@ -4,6 +4,18 @@ $(document).ready(function(){
 
 });
 
+// Dialog Trigger
+$(document).on('click', '*[data-dialog], dialog button', function(e){
+		
+	e.preventDefault();
+
+	var id = $(this).data('dialog');
+	var dialog = id ? document.getElementById(id) : $(this).parents('dialog')[0];
+
+	$(dialog).attr('open') ? dialog.close() : dialog.showModal();
+
+});
+
 // Infinite Scroll
 function infiniteScrollMatSetup(){
 

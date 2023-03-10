@@ -15,7 +15,7 @@
 </section>
 <section id="centered" class="column">
 
-	<header class="grid content">
+	<header class="grid content scrollSnap">
 
 		<h3>INTELIGÊNCIA <mark>MICROCLIMÁTICA</mark> EM TEMPO REAL PARA A SUA <mark>TOMADA DE DECISÃO.</mark></h3>
 		<img src="<?=BASE?>/assets/images/home/centered_header_1.png">
@@ -56,7 +56,7 @@
 		<a href="#" class="btn">Entre em contato</a>
 		
 	</section>
-	<section id="video" class="content row">
+	<section id="video" class="content row scrollSnap">
 	
 		<div class="text column">
 		
@@ -84,7 +84,8 @@
 			array(
 			
 				'icon' => 'rain-amount.svg',
-				'title' => 'Quanto choveu'
+				'title' => 'Quanto choveu',
+				'dialog' => 'rainAmount'
 			
 			),
 			array(
@@ -197,7 +198,7 @@
 			
 			),
 
-		)
+		);
 	
 	?>
 	
@@ -206,7 +207,32 @@
 		<h3>Essas são algumas das informações à que <br> você tem acesso</h3>
 		<?php foreach($infos as $info): ?>
 		
-			<article class="column accentBg">
+			<?php if(isset($info['dialog'])): ?>		
+			<dialog class="column" id="<?=$info['dialog']?>">
+
+				<header class="column">
+				
+					<div class="row">
+					
+						<i><?php include 'assets/svgs/info/'.$info['icon'] ?></i>
+						<button><?php include 'assets/svgs/close-icon.svg' ?></button>
+					
+					</div>
+					<h5><?=$info['title']?></h5>
+					<p>Lorem ipsum dolor sit amet consectetur. Ut congue nunc egestas aliquam nibh nisl vitae senectus.</p>
+					
+				</header>
+				<div class="grid body">
+				
+					<p>Lorem ipsum dolor sit amet consectetur. Integer egestas amet enim sed est pellentesque fringilla consectetur. Felis ultricies fringilla consequat turpis purus mattis quis. Semper interdum ullamcorper est at netus sit sed. Posuere euismod lacus tellus vel sed ut molestie sem. Nunc sit eget venenatis malesuada ornare nisl leo ridiculus. Sollicitudin placerat urna turpis pellentesque luctus et tellus. At urna feugiat phasellus quam tortor orci imperdiet tellus est. Imperdiet vulputate erat tortor dignissim ipsum nulla libero vel vel. Pellentesque quam purus vitae consequat. Enim malesuada mauris vitae amet in vel interdum in. Ante porttitor feugiat malesuada magna condimentum egestas. <br><br> Urna ornare diam aenean a magna vel magna. Cursus porttitor bibendum eleifend in maecenas id velit mollis. Ultricies tristique ac eu ipsum pretium velit faucibus blandit. Sed tellus lacinia integer amet ut ultrices ipsum eget ultrices. Condimentum varius nunc aliquet justo ut. Penatibus suscipit in maecenas et. Malesuada sem mauris fringilla non elementum quam viverra et volutpat.</p>
+					<img src="">
+				
+				</div>
+				<button class="btn">Entendi</button>
+				
+			</dialog>		
+			<?php endif; ?>
+			<article class="column accentBg" <?php if(isset($info['dialog'])) echo 'data-dialog="'.$info['dialog'].'"'; ?>>
 		
 				<i><?php include 'assets/svgs/info/'.$info['icon'] ?></i>
 				<header class="column">
@@ -223,7 +249,7 @@
 	</div>
 		
 </section>
-<section id="howTo">
+<section id="howTo" class="scrollSnap">
 
 	<div class="content grid">
 	
@@ -368,7 +394,7 @@
 	</div>
 
 </section>
-<section id="depositions" class="full column accentBg">
+<section id="depositions" class="full column accentBg scrollSnap">
 
 	<h3>Confira a história dos nossos clientes.</h3>
 	<wm-slider class="grid">

@@ -15,12 +15,7 @@
 		
 	}
 	if($page === '') $page = 'home';
-	if(!file_exists('pages/'.$page.'.php')){
-		
-		header('Location: '.BASE);
-		die();
-		
-	}
+	if(!file_exists('pages/'.$page.'.php')) $page = 'not-found';
 
 ?>
 <html>
@@ -71,13 +66,23 @@
 			<a href="<?=BASE?>"><?php include 'assets/svgs/logo.svg' ?></a>
 			<nav class="row">
 			
-				<a href="#" class="active">HOME</a>
-				<a href="#">SOLUÇÕES</a>
-				<a href="#">PORQUE A ZEUS?</a>
-				<a href="#">SOBRE</a>
-				<a href="#">CLIENTES</a>
-				<a href="#">BLOG</a>
-				<a href="#">FALE CONOSCO</a>
+				<a href="<?=BASE?>" class="active">HOME</a>
+				<a href="<?php if($page !== 'home') echo BASE ?>#centered">SOLUÇÕES</a>
+				<a href="<?php if($page !== 'home') echo BASE ?>#video">PORQUE A ZEUS?</a>
+				<a href="<?php if($page !== 'home') echo BASE ?>#howTo">SOBRE</a>
+				<a href="<?php if($page !== 'home') echo BASE ?>#depositions">CLIENTES</a>
+				<a href="<?=BASE?>/blog">BLOG</a>
+				<section class="dropdownWrapper">
+				
+					<span>FALE CONOSCO</span>
+					<nav class="dropdown column">
+					
+						<a href="<?=BASE?>/contato">Entre em contato</a>
+						<a href="<?=BASE?>/trabalhe-conosco">Trabalhe conosco</a>
+					
+					</nav>
+				
+				</section>
 				<span>|</span>
 				<a href="#">LOGIN</a>
 			

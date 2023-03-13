@@ -62,6 +62,14 @@ dialog .body p{font-size: 0.875rem;}
 dialog .body img{background-color: #D9D9D9;}
 dialog > button{margin: auto;}
 
+table{border-radius: 20px; overflow: hidden; border-collapse: collapse;}
+table th{padding: 10px 0;}
+table th:not(:last-child){border-right: 3px solid #F4F3F2;}
+table thead th{font-size: 1.25rem; font-weight: 700;}
+table tbody th{font-size: 0.875rem; font-weight: 500;}
+table tbody tr:nth-child(2n - 1){background-color: #49748A; color: #fff;}
+table tbody tr:nth-child(2n){color: var(--accent-color);}
+
 *{box-sizing: border-box; margin: 0; border: 0; background-color: initial;}
 *[data-dialog]{cursor: pointer;}
 *::selection{background-color: var(--accent-color); color: #fff;}
@@ -81,6 +89,7 @@ dialog > button{margin: auto;}
 
 .accentBg{background-color: var(--accent-color); color: #fff;}
 .accentBg *::selection{background-color: var(--main-color);}
+.accentBg .btn:hover{background-color: var(--main-color); border-color: var(--main-color); color: #fff;}
 
 wm-slider.grid{grid-template-columns: 50px 1fr 50px;}
 wm-slider.grid > *{grid-row: 1;}
@@ -98,6 +107,17 @@ form label:has(input) input + p:empty:before{content: 'Nenhum arquivo selecionad
 form .btn{margin: auto;}
 form .labeled{align-items: flex-start; gap: 7px;}
 form .labeled label:first-child{font-size: 0.75rem; color: #7C858C; font-weight: 700;}
+
+article.iconed{padding: 30px 10px; box-shadow: 7px 14px 30px rgb(11 46 55 / 25%); border-radius: 20px; align-items: center; text-align: center; gap: 20px;}
+article.iconed h5{font-size: 1rem; font-weight: 500;}
+article.iconed p{font-size: 0.875rem; font-weight: 500;}
+
+article.longWhiteCard{padding: 30px 20px; align-items: center; text-align: center; gap: 20px; background: #F4F3F2; box-shadow: 7px 14px 30px rgba(55, 59, 60, 0.15); border-radius: 20px;}
+article.longWhiteCard h5{font-size: 1.5rem;}
+article.longWhiteCard h6{font-size: 1rem; font-weight: 500;}
+article.longWhiteCard p{font-size: 0.875rem; color: #7C858C;}
+article.longWhiteCard .thumb{width: 160px; height: 160px; overflow: visible;}
+article.longWhiteCard .thumb img{transform: translateY(calc(160px - 100%));}
 
 /* Header */
 
@@ -330,6 +350,122 @@ main#trabalhe-conosco section#curriculum .content{align-items: center; text-alig
 
 main#contato section#contact .group{justify-content: space-between; padding: 25px 20px; border: 1px solid #7C858C; border-radius: 5px; color: #7C858C; font-size: 0.875rem; gap: 10px;}
 main#contato section#contact .group .row{align-items: center;}
+
+/* On Boarding */
+
+section#onboarding{padding: 20px 0;}
+section#onboarding .content{gap: 20px;}
+section#onboarding h1{font-size: 3rem;}
+
+/* Onboarding Slider */
+
+section#onboardingSlider{grid-template-columns: calc(100% - 100vw/1400*550) calc(100vw/1400*550); gap: 60px 0;}
+section#onboardingSlider:after{content: ''; aspect-ratio: 720/653; background: url("../assets/images/onboarding/bem-vindo/material-de-apoio.png") no-repeat center / cover;}
+section#onboardingSlider > .column{padding-left: 175px;}
+section#onboardingSlider wm-slider{gap: 40px; --row-count: 2.2;}
+section#onboardingSlider article{height: 100%; gap: 30px; padding: 30px 20px; justify-content: space-between; align-items: center; margin: 0 10px; border-radius: 20px;}
+section#onboardingSlider article h5{font-size: 1rem; font-weight: 500;}
+section#onboardingSlider article p{font-size: 0.875rem;}
+section#onboardingSlider article .btn{margin-top: 0;}
+
+/* Bem Vindo */
+
+	/* Integration */
+
+main#bem-vindo section#integration{padding: 40px 0 30px;}
+main#bem-vindo section#integration .content{grid-template-columns: 1fr 603px; gap: 20px;}
+main#bem-vindo section#integration .content:after{content: ''; aspect-ratio: 603/340; background: url("../assets/images/onboarding/bem-vindo/integration.jpg") no-repeat center / cover;}
+
+	/* Meeting */
+
+main#bem-vindo section#meeting{padding: 60px 0;}
+main#bem-vindo section#meeting .content{gap: 55px 20px;}
+main#bem-vindo section#meeting h3{font-size: 2rem;}
+main#bem-vindo section#meeting header{grid-template-columns: 1fr 600px; align-items: center;}
+main#bem-vindo section#meeting header .column{gap: 20px;}
+main#bem-vindo section#meeting i.logo svg{width: 100%; height: auto;}
+main#bem-vindo section#meeting article.diferentials{grid-template-columns: repeat(3, 1fr); gap: 30px 20px;}
+main#bem-vindo section#meeting article.diferentials > h5{font-size: 1.25rem; grid-column: 1 / span 3;}
+
+	/* Addresses */
+
+main#bem-vindo section#addresses{padding: 60px 0;}
+main#bem-vindo section#addresses .content{gap: 30px 20px; grid-template-columns: repeat(2, 1fr);}
+main#bem-vindo section#addresses h3{grid-column: 1 / span 2; font-size: 2rem;}
+main#bem-vindo section#addresses article{padding: 30px 20px; box-shadow: 7px 14px 30px rgb(11 46 55 / 25%); border-radius: 20px; gap: 20px; align-items: center; text-align: center;}
+main#bem-vindo section#addresses article h5{font-size: 1rem; font-weight: 500;}
+main#bem-vindo section#addresses article address{font-style: initial; font-size: 0.875rem;}
+
+	/* Purpose */
+
+main#bem-vindo section#purpose{padding: 60px 0;}
+main#bem-vindo section#purpose img{margin: 30px 0 -30px;}
+main#bem-vindo section#purpose .grid{padding: 0 20px; grid-template-columns: repeat(3, 1fr); gap: 20px;}
+
+	/* Deliver */
+
+section#deliver{padding: 30px 0;}
+section#deliver .content{gap: 30px 20px; grid-template-columns: repeat(3, 1fr);}
+section#deliver h3{grid-column: 1 / span 3;}
+
+/* Onboarding contact */
+
+main#onboarding-contato section#onboarding h1{margin-bottom: 30px; text-align: center;}
+
+/* Beneficios */
+
+	/* Onboarding Slider */
+
+main#beneficios section#onboardingSlider{padding: 80px 0;}
+main#beneficios section#onboardingSlider:after{background-image: url("../assets/images/onboarding/bem-vindo/beneficios.png"); margin-right: 5vw;}
+main#beneficios section#onboardingSlider article{justify-content: initial; gap: 30px;}
+main#beneficios p.content{grid-row: 2; grid-column: 1 / span 2; font-size: 0.875rem; color: #7C858C;}
+
+/* Tangerino */
+
+	/* Control */
+
+main#tangerino section#control{counter-reset: articles;}
+main#tangerino section#control article{height: 100%; margin: 0 10px; counter-increment: articles;}
+main#tangerino section#control article .thumb{width: 160px; height: 160px; overflow: visible; align-items: center; justify-content: center; font-size: 4rem; font-weight: 700;}
+main#tangerino section#control article .thumb:before{content: counter(articles);}
+main#tangerino section#control article .thumb:before,
+main#tangerino section#control article .thumb *{grid-row: 1; grid-column: 1;}
+main#tangerino section#control wm-slider{--row-count: 3.5; padding: 35px 0;}
+main#tangerino section#control wm-slider-controls{background-color: #F4F3F2;}
+
+	/* Steps */
+
+main#tangerino section.steps{padding: 60px 0;}
+main#tangerino section.steps .content{gap: 40px 20px; grid-template-columns: repeat(2, 1fr);}
+main#tangerino section.steps .content header{grid-column: 1 / span 2; gap: 10px;}
+main#tangerino section.steps article{gap: 20px; padding: 30px 20px; text-align: center; align-items: center; box-shadow: 7px 14px 30px rgba(11, 46, 55, 0.25); border-radius: 20px;}
+main#tangerino section.steps article h5{font-size: 1rem; font-weight: 500;}
+main#tangerino section#correcao article:last-child{grid-column: 1 / span 2; margin: auto; width: 50%;}
+
+/* Documentos */
+
+	/* onBoarding */
+
+main#documentos section#onboarding .row{justify-content: center;}
+main#documentos section#onboarding h1{text-align: center; margin-bottom: 10px;}
+main#documentos section#onboarding article{border: 1px solid #7C858C; filter: drop-shadow(7px 12px 30px rgba(0, 58, 73, 0.76)); border-radius: 5px; padding: 20px 25px; align-items: center; justify-content: center; width: 190px;}
+main#documentos section#onboarding article header{align-items: center; padding: 5px 0;}
+main#documentos section#onboarding article h5{font-size: 0.875rem; font-weight: 500; color: #7C858C;}
+main#documentos section#onboarding article p{color: var(--main-color); font-size: 0.625rem;}
+
+/* Entrega de Valor */
+
+main#entrega-de-valor section#entrega{gap: 60px; counter-reset: articles;}
+main#entrega-de-valor section#entrega .row{gap: 25px; align-items: flex-start; justify-content: center;}
+main#entrega-de-valor section#entrega article{padding: 30px 20px; align-items: center; gap: 20px; background: #F4F3F2; box-shadow: 7px 14px 30px rgb(55 59 60 / 15%); border-radius: 20px;}
+main#entrega-de-valor section#entrega article header.row{align-items: center; counter-increment: articles;}
+main#entrega-de-valor section#entrega article i.thumb{flex: 0 0 160px; height: 160px; align-items: center; font-size: 4rem; font-weight: 700; text-align: center; font-style: initial;}
+main#entrega-de-valor section#entrega article i.thumb:before{content: counter(articles);}
+main#entrega-de-valor section#entrega article i.thumb:before,
+main#entrega-de-valor section#entrega article i.thumb *{grid-row: 1; grid-column: 1;}
+main#entrega-de-valor section#entrega article h5{font-size: 1.5rem;}
+main#entrega-de-valor section#entrega article p{font-size: 0.875rem; color: #7C858C; width: 100%;}
 
 /* 404 */
 
